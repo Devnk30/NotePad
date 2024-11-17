@@ -2,6 +2,9 @@
 
 Simple and customizable text editor using tkinter
 
+![NotePad](bin/images/NotePad.gif)
+![notepad_example_image](bin/images/notepad_example_image.png)
+
 ## Requirements
 
 - Python 3.12.3
