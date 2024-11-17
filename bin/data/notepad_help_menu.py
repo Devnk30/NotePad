@@ -1,4 +1,4 @@
-import os
+import os, webbrowser
 from tkinter import *
 from data.notepad_root import Notepad
 
@@ -148,14 +148,17 @@ class Help_menus(Notepad):
             relief="flat",
         ).grid(row=5, column=0, padx=84, sticky="nswe")
 
-        Label(
+        self._github_label = Label(
             self.__help_toplevel,
-            text="GitHub",
-            bg=self._color2,
-            fg=self._color1,
-            font=(self._font, "10", self._fontstyle),
+            text="https://github.com/Devnk30/NotePad",
+            cursor="hand2",
+            background=self._color2,
+            foreground=self._color1,
+            font=(self._font, "10", "underline"),
             relief="flat",
-        ).grid(row=6, column=0, padx=84, pady=5, sticky="nswe")
+        )
+
+        self._github_label.grid(row=6, column=0, padx=84, pady=5, sticky="nswe")
 
         # Add a "Close" button to dismiss the dialog.
         Button(
@@ -172,6 +175,11 @@ class Help_menus(Notepad):
             font=(self._font, "10", self._fontstyle),
             command=self.__help_toplevel.destroy,
         ).place(x=275, y=290)
+
+        self._github_label.bind("<Button-1>", self.open_github_repo)
+
+    def open_github_repo(self, event):
+        webbrowser.open_new("https://github.com/Devnk30/NotePad")
 
     def _personalization_guide(self):
         """
