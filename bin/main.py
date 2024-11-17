@@ -1,4 +1,3 @@
-import webbrowser
 from tkinter import *
 from data.notepad_personalize_menus import Personalize_menu
 from data.notepad_shortcut_menu import Shortcut_menu
